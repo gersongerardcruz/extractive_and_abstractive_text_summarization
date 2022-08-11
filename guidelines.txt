@@ -1,0 +1,9 @@
+notebooks:
+1.0-ggc-data-collection-and-extraction
+2.0-ggc-data-cleaning-and-preprocessing
+3.0-ggc-feature-extraction-and-text-summarization
+4.0-ggc-streamlit-deployment
+
+src:
+make_dataset
+build_features
