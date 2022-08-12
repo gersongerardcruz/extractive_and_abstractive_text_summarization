@@ -79,6 +79,7 @@ target/
 /data/processed
 /data/interim
 /data/external
+/data/raw/top5.csv
 
 # Mac OS-specific storage files
 .DS_Store
