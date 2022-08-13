@@ -7,3 +7,5 @@ setuptools==49.2.1
 streamlit==0.78.0
 summarizer==0.0.7
 transformers==4.21.1
+torch==1.12.1
+protobuf==3.20.*
