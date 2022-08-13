@@ -1,3 +1,5 @@
+from transformers import *
+from summarizer import Summarizer
 from nltk.corpus import stopwords
 import string
 
@@ -125,3 +127,20 @@ class TextSummarizer:
     self.data["abstractive_summaries"] = summaries_list
       
     return self.data
+
+def load_bert(pretrained_model):
+  # Load model, model config and tokenizer via Transformers
+  custom_config = AutoConfig.from_pretrained(pretrained_model)
+  custom_config.output_hidden_states=True
+  custom_tokenizer = AutoTokenizer.from_pretrained(pretrained_model)
+  custom_model = AutoModel.from_pretrained(pretrained_model, config=custom_config)
+
+  # Create pretrained-model object for abstractive summarization
+  model = Summarizer(custom_model=custom_model, custom_tokenizer=custom_tokenizer)
+
+  return model
+
+def load_bart(pretrained_model):
+  model = pipeline("summarization", model=pretrained_model)
+
+  return model
