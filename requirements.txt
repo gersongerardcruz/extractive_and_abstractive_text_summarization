@@ -1,0 +1,11 @@
+bert_extractive_summarizer==0.10.1
+click==7.1.2
+nltk==3.6.5
+numpy==1.19.5
+pandas==1.2.3
+setuptools==49.2.1
+streamlit==0.78.0
+summarizer==0.0.7
+transformers==4.21.1
+torch==1.12.1
+protobuf==3.20.*
