@@ -28,6 +28,9 @@ def get_summary(full_text, abstract, conclusion):
     text_list = [abstract, extractive_summarized_text, conclusion]
     joined_text = " ".join(text_list)
 
+    if len(joined_text) > 1024:
+        joined_text = extractive_summarized_text
+
     # Abstractive Summarizer
     abstractive_model = load_bart(bart_pretrained_model)
 
