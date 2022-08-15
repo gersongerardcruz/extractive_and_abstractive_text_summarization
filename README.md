@@ -249,5 +249,3 @@ Simply fill-out the fields with the abstract, full text, and conclusion of the t
 To deploy the app, simply follow the instructions found in the [streamlit deployment documentation](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app)
 
 ![divider](../assets/gradient-divider.png?raw=true)
-
-## References
