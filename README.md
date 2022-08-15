@@ -4,7 +4,7 @@
 
 <img src='https://drive.google.com/uc?id=1caGEZmT4ODf0R7zNZLqYh-8plpv55sIh'>
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 
 ## 📑 Contextualization
@@ -31,7 +31,7 @@ The general workflow for abstractive summarization goes like:
 
 In general, abstractive summarization is desired more than extractive summarization because it is akin to how a human would summarize a text by first understanding its meaning and putting it into his/her own words. However, given the challenges in semantic representation, extractive summarization often gives better results. 
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## 💼 The Project
 
@@ -39,13 +39,13 @@ In addition to the advantages and disadvantages of these two summarization techn
 
 While I won't be going as detailed as the paper, in this project, I still aim to apply extractive and abstractive summarization in order to summarize long scientific documents. 
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## 📁 The Dataset
 
 The dataset I will use for this project consists of 100 scientific papers from the WING NUS group's Scisumm corpus found at this [github link](https://github.com/WING-NUS/scisumm-corpus). According to the authors, [Scisumm](https://cs.stanford.edu/~myasu/projects/scisumm_net/) is a summary of scientific papers should ideally incorporate the impact of the papers on the research community reflected by citations. To facilitate research in citation-aware scientific paper summarization (Scisumm), the CL-Scisumm shared task has been organized since 2014 for papers in the computational linguistics and NLP domain. 
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## ❗ The Methodology
 
@@ -77,7 +77,7 @@ For abstractive summarization, I first concatenate the abstract, extractive summ
 
 For deployment, I use Streamlit to create a simple user interface which requires a long text input to summarize.
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## 📔 Jupyter Notebooks
 
@@ -89,11 +89,33 @@ There are a total of 4 Jupyter notebooks included in this project. There are as 
 
 Each Jupyter notebook contains explorations related to the notebook's title. They are meant to showcase my perspective as I was creating individual components of the project and are reference points regarding the project workflow from start to finish. 
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## Project Organization
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+Shown below is the structure of the project inspired from [cookiecutter's data science project template](https://drivendata.github.io/cookiecutter-data-science/).
+
+    ├── LICENSE
+    ├── README.md          <- The top-level README for this project.
+    ├── data
+    │   ├── processed      <- The final, canonical data sets for text summarization.
+    │   └── raw            <- The original, immutable data.
+    │
+    ├── notebooks          <- Jupyter notebooks containing the explorations performed in this project
+    ├── requirements.txt   <- The requirements file for reproducing the project
+    │
+    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
+    ├── src                <- Source code for use in this project.
+    │   ├── __init__.py    <- Makes src a Python module
+    │   │
+    │   ├── data           <- Scripts to download or generate data
+    │   ├── models         <- Scripts for text summarization
+    │   ├── deployment     <- Scripts for project deployment
+    │
+    └── tox.ini            <- tox file with settings for running tox
+
+
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## Usage
 
@@ -157,6 +179,8 @@ deactivate
 ```
 
 For a more complete explanation, check the the [virtualenv documentation](https://virtualenv.pypa.io/en/latest/).
+
+![divider](../assets/gradient-divider.png?raw=true)
 
 ## Install Requirements
 
@@ -224,55 +248,11 @@ Simply fill-out the fields with the abstract, full text, and conclusion of the t
 
 To deploy the app, simply follow the instructions found in the [streamlit deployment documentation](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app)
 
+![divider](../assets/gradient-divider.png?raw=true)
+
 ## References
 
 Project Organization
-------------
-
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
-    │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
-    │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.readthedocs.io
 
 
 --------
