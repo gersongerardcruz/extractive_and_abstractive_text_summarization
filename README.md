@@ -216,6 +216,8 @@ This will redirect you to a new tab containing the locally hosted summarizer via
 
 <img src='https://drive.google.com/uc?id=1jcAC2mFJO5nAUagOJY-leMYsHV-BNkDa'>
 
+![streamlit_summarize](../assets/streamlit_summarize.png?raw=true)
+
 Simply fill-out the fields with the abstract, full text, and conclusion of the texts in the cleaned .csv file, and click `Summarize`. This will run the text summarization found in `deploy.py` and return the summarized version of the text below as shown in the screenshot below:
 
 <img src='https://drive.google.com/uc?id=1ty8pVEwOq0pDhLtpmxz5HLdIjbQLnTnP'>
