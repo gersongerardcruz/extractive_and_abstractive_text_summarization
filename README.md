@@ -226,7 +226,7 @@ py src/models/summarize.py data/processed/top5_cleaned.csv results.csv
 
 This command will perform text summarization on the cleaned csv file and outputs a summarized version in the `results.csv` file. 
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+![divider](../assets/gradient-divider.png?raw=true)
 
 ### Text Summarization via Streamlit
 
@@ -251,10 +251,3 @@ To deploy the app, simply follow the instructions found in the [streamlit deploy
 ![divider](../assets/gradient-divider.png?raw=true)
 
 ## References
-
-Project Organization
-
-
---------
-
-<p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
