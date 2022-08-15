@@ -100,11 +100,132 @@ Each Jupyter notebook contains explorations related to the notebook's title. The
 
 ## Usage
 
+There are two main use cases for this project. 
+
+**First is summarizing a `.csv` file or any file with the following format:** 
+
+| index | abstract  | full_text | conclusion |
+| :-----: | :-: | :-: | :-: |
+| 0 | Lorem | Ipsum | Lorem |
+| 1 | Ipsum | Lorem | Ipsum |
+
+**Second is deploying a local Streamlit model which takes as input the abstract, full text, and conclusion of a long scientific article and generates a summary** 
+
+Whichever use case is to be executed, I recommend executing the step-by-step instructions below in a **virtual environment**. A virtual environment is a tool used to separate the dependencies of different projects by creating **individual environments** for each. Simply put, virtual environments protect the user from library conflicts since different projects will require different library versions or even none of the libraries a current project is using at all and vice versa.
+
+To create a virtual environment, the module `virtualenv` can be used. `virtualenv` creates a separate folder with all the required executables for Python projects. 
+
+### Install the virtualenv package
+
+To install `virtualenv`, make sure [pip](https://pip.pypa.io/en/stable/installation/) is intalled in your device.
+
+Install `virtualenv` with pip:
+
+```python
+pip install virtualenv
+```
+
+### Create the virtual environment
+
+To create a virtual environment, a path must be declared. For this project, we can use the name `text_summarizer`:
+
+```python
+virtualenv text_summarizer
+```
+
+### Activate the virtual environment
+
+The virtual environment can be activated using the commands:
+
+#### Mac OS/ Linux
+
+```bash
+source text_summarizer/bin/activate
+```
+
+#### Windows
+
+```bash
+text_summarizer\Scripts\activate
+```
+
+Upon activation, you should see the virtual environment name in parenthesis in the terminal i.e. (text_summarizer). 
+
+### Deactivate the virtual environment
+
+To deactivate the virtual environment and use your original Python environment, simply:
+
+```bash
+deactivate
+```
+
+For a more complete explanation, check the the [virtualenv documentation](https://virtualenv.pypa.io/en/latest/).
+
+## Install Requirements
+
+After activating your virtual environment, **clone the repository into it:**
+
+```bash
+git clone https://github.com/gersongerardcruz/extractive_and_abstractive_text_summarization.git
+```
+
+Then, move into the directory of the repository:
+
+```bash
+cd extractive_and_abstractive_text_summarization
+```
+
+Then, install the necessary requirements:
+
+```bash
+pip install -r requirements.txt
+```
+
+This command will install all dependencies needed for this project into your virtual environment. 
+
 ### Text Summarization on `.csv` files
+
+The repository contains two raw data files: one of the complete 100 texts in `top100.csv` and another of the first five scientific texts in `top5.csv`. The `top5.csv` file is meant to be a test file for you to experience how the summarization works. 
+
+### Cleaning and Processing the Data
+
+The first step in summarization is processing the data. To process the data, execute the `src/data/make_dataset.py` and output the resulting data into the `processed/` folder. The `make_dataset.py` requires two arguments: input file path and output file path as shown in the code block below:
+
+```bash
+py src/data/make_dataset.py data/raw/top5.csv data/processed/top5_cleaned.csv
+```
+
+### Performing Text Summarization
+
+After processing the raw data, text summarization can be performed by executing the `src/models/summarize.py` which performs text summarization on a `.csv` file of the prescribed format. The `summarize.py` also requires the arguments: input file path and output file path. 
+
+```bash
+py src/models/summarize.py data/processed/top5_cleaned.csv results.csv
+```
+
+This command will perform text summarization on the cleaned csv file and outputs a summarized version in the `results.csv` file. 
+
+<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
 
 ### Text Summarization via Streamlit
 
-<img src='https://drive.google.com/uc?id=1GkUMwRkLPQBW4qWzqlp3vxKdfCG7uPHQ'>
+The deployment file is found in `src/deployment/deploy.py`. To run this file using streamlit, simply run the command:
+
+```bash
+streamlit run src/deployment/deploy.py
+```
+
+This will redirect you to a new tab containing the locally hosted summarizer via streamlit as shown below:
+
+<img src='https://drive.google.com/uc?id=1jcAC2mFJO5nAUagOJY-leMYsHV-BNkDa'>
+
+Simply fill-out the fields with the abstract, full text, and conclusion of the texts in the cleaned .csv file, and click `Summarize`. This will run the text summarization found in `deploy.py` and return the summarized version of the text below as shown in the screenshot below:
+
+<img src='https://drive.google.com/uc?id=1ty8pVEwOq0pDhLtpmxz5HLdIjbQLnTnP'>
+
+<img src='https://drive.google.com/uc?id=1DXx7Wt2iTg5A5lrplESsIU1lAZJu6nD9'>
+
+To deploy the app, simply follow the instructions found in the [streamlit deployment documentation](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app)
 
 ## References
 
