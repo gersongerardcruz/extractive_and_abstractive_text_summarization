@@ -1,0 +1,65 @@
+action: GLOB, msg: packaging
+cwd: C:\Users\Gerson Cruz\Desktop\Portfolio Projects\extractive_and_abstractive_text_summarization
+cmd: 'c:\users\gerson cruz\appdata\local\programs\python\python39\python.exe' setup.py sdist --formats=zip --dist-dir '.tox\dist'
+running sdist
+running egg_info
+writing src.egg-info\PKG-INFO
+writing dependency_links to src.egg-info\dependency_links.txt
+writing top-level names to src.egg-info\top_level.txt
+reading manifest file 'src.egg-info\SOURCES.txt'
+writing manifest file 'src.egg-info\SOURCES.txt'
+running check
+warning: check: missing required meta-data: url
+
+warning: check: missing meta-data: if 'author' supplied, 'author_email' should be supplied too
+
+creating src-0.1.0
+creating src-0.1.0\src
+creating src-0.1.0\src.egg-info
+creating src-0.1.0\src\data
+creating src-0.1.0\src\deployment
+creating src-0.1.0\src\models
+copying files to src-0.1.0...
+copying README.md -> src-0.1.0
+copying setup.py -> src-0.1.0
+copying src\__init__.py -> src-0.1.0\src
+copying src.egg-info\PKG-INFO -> src-0.1.0\src.egg-info
+copying src.egg-info\SOURCES.txt -> src-0.1.0\src.egg-info
+copying src.egg-info\dependency_links.txt -> src-0.1.0\src.egg-info
+copying src.egg-info\top_level.txt -> src-0.1.0\src.egg-info
+copying src\data\__init__.py -> src-0.1.0\src\data
+copying src\data\data_cleaning.py -> src-0.1.0\src\data
+copying src\data\make_dataset.py -> src-0.1.0\src\data
+copying src\data\preprocessing.py -> src-0.1.0\src\data
+copying src\deployment\__init__.py -> src-0.1.0\src\deployment
+copying src\deployment\deploy.py -> src-0.1.0\src\deployment
+copying src\models\__init__.py -> src-0.1.0\src\models
+copying src\models\summarize.py -> src-0.1.0\src\models
+copying src\models\text_summarizer.py -> src-0.1.0\src\models
+Writing src-0.1.0\setup.cfg
+creating '.tox\dist\src-0.1.0.zip' and adding 'src-0.1.0' to it
+adding 'src-0.1.0'
+adding 'src-0.1.0\src'
+adding 'src-0.1.0\src.egg-info'
+adding 'src-0.1.0\PKG-INFO'
+adding 'src-0.1.0\README.md'
+adding 'src-0.1.0\setup.cfg'
+adding 'src-0.1.0\setup.py'
+adding 'src-0.1.0\src\data'
+adding 'src-0.1.0\src\deployment'
+adding 'src-0.1.0\src\models'
+adding 'src-0.1.0\src\__init__.py'
+adding 'src-0.1.0\src\data\data_cleaning.py'
+adding 'src-0.1.0\src\data\make_dataset.py'
+adding 'src-0.1.0\src\data\preprocessing.py'
+adding 'src-0.1.0\src\data\__init__.py'
+adding 'src-0.1.0\src\deployment\deploy.py'
+adding 'src-0.1.0\src\deployment\__init__.py'
+adding 'src-0.1.0\src\models\summarize.py'
+adding 'src-0.1.0\src\models\text_summarizer.py'
+adding 'src-0.1.0\src\models\__init__.py'
+adding 'src-0.1.0\src.egg-info\dependency_links.txt'
+adding 'src-0.1.0\src.egg-info\PKG-INFO'
+adding 'src-0.1.0\src.egg-info\SOURCES.txt'
+adding 'src-0.1.0\src.egg-info\top_level.txt'
+removing 'src-0.1.0' (and everything under it)
