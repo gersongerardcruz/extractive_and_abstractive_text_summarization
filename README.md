@@ -9,9 +9,6 @@
 
 ## 📑 Contextualization
 
-
-
-
 In an increasingly information-dependent world, the ability to provide the most important and accurate information in the least amount of time is exceedingly valuable. Text summarization can provide this value. It is the process of summarizing a certain document in order to get the most important information from the original one. Essentially, text summarization produces a concise summary which preserves the valuable information and meaning of a document.
 
 There are two general types of text summarization: Extractive and Abstractive summarization.
