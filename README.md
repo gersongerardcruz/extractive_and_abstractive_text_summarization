@@ -55,6 +55,23 @@ The project workflow consists of three main steps: data collection and preproces
 
 In this step, I chose 100 scientific papers from the Scisumm corpus. I selectively decided which papers to include because the project requires papers which explicitly have an `abstract` and a `conclusion` in the `.xml` file. Some papers, after investigation, did not have an `abstract` section and instead was found directly in the text section of the document. This will lead to extraction errors as the `.xml` extraction pipeline was explicitly designed for xml documents which explicity have an `abstract` and `conclusion` section. 
 
+To illustrate this, see the structure of a sample paper below:
+
+![xml](../assets/XML_Structure.png?raw=true)
+
+Each part of the paper is contained in a `SECTION` tag and the succeeding paragraphs of the section are found below it. Each sentence is given a unique `security identifier` or `sid`. 
+
+In order to properly extract this data, I follow this process:
+1. Get the list of all `.xml` files names
+2. Use the library `objectify` in order to extract all text contents of the data.
+3. Extract the `abstract` and `conclusion` columns into separate lists for abstractive summarization. 
+4. Collate the text from every section into one whole text.
+5. Append the `abstract`, `entire_text`, and `conclusion` into a pandas dataframe
+
+Thus, if a paper is not properly formatted, the .xml extraction fails and leads to an erroneous output, hence the need to selectively choose papers. 
+
+*Note: I recognize that a more robust algorithm will have solved this issue. However, given the limited time I had to complete this project, I decided that instead of investing more time in figuring out extraction code for all cases, selectively gathering the data I needed instead will be more effective for this project.* 
+
 For the data preprocessing step, I create a data cleaning and preprocessing functions with the following capabilities:
 * Lemmatization
 * Stopword removal
@@ -65,17 +82,17 @@ For the data preprocessing step, I create a data cleaning and preprocessing func
 * Weblinks cleaning
 * Unnecessary spaces removal
 
-I gave the user the freedom to choose which cleaning to apply by creating a unified function where every cleaning step is a boolean. For the purpose of this project, I do not lemmatize, remove stopwords, lowercase, and remove punctuations so that the summarization will still have its semantic context in place. 
+I gave the user the freedom to choose which cleaning to apply by creating a unified function where every cleaning step is a boolean. **For the purpose of this project, I do not lemmatize, remove stopwords, lowercase, and remove punctuations so that the summarization will still have its semantic context in place.** 
 
-### Model Training
+### Text Summarization
 
-For modelling, I perform both extractive and abstractive summarization. For extractive summarization, I use the BERT transformer model and customize it to use the pre-trained weights of the **sciBERT** model which specializes in scientific texts, which fit our purpose. For every text, I determine the optimal number of sentences for the extracted summary.
+For summarization, I performed both extractive and abstractive summarization. For extractive summarization, I used the BERT transformer model and customized it to use the pre-trained weights of the **sciBERT** model which specializes in scientific texts, which fit our purpose. For every text, I determined the optimal number of sentences for the extracted summary.
 
-For abstractive summarization, I first concatenate the abstract, extractive summary, and conclusion together since much of the important information can be found in them. Then, I use the **facebook-BART-large-cnn** transformer model to perform the abstraction. 
+For abstractive summarization, I first concatenated the abstract, extractive summary, and conclusion together since much of the important information can be found in them. However, if the length of the concatenated text exceeds 1024-the limit of the BART model-I stuck with the extractive summary instead. Then, I used the **facebook-BART-large-cnn** transformer model to perform the abstraction. 
 
 ### Model Deployment
 
-For deployment, I use Streamlit to create a simple user interface which requires a long text input to summarize.
+For deployment, I used Streamlit to create a simple user interface which requires a long text input to summarize.
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
@@ -87,7 +104,7 @@ There are a total of 4 Jupyter notebooks included in this project. There are as 
 * `03-gglc-feature-explorations-and-text-summarization.ipynb`
 * `04-gc-model-deployment-with-streamlit-and-localtunnel.ipynb`
 
-Each Jupyter notebook contains explorations related to the notebook's title. They are meant to showcase my perspective as I was creating individual components of the project and are reference points regarding the project workflow from start to finish. 
+Each Jupyter notebook contains explorations related to the notebook's title. They are meant to showcase my perspective as I was creating individual components of the project and are reference points regarding the project workflow from start to finish. Feel free to explore them!
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
@@ -111,8 +128,6 @@ Shown below is the structure of the project inspired from [cookiecutter's data s
     │   ├── data           <- Scripts to download or generate data
     │   ├── models         <- Scripts for text summarization
     │   ├── deployment     <- Scripts for project deployment
-    │
-    └── tox.ini            <- tox file with settings for running tox
 
 
 ![divider](../assets/gradient-divider.png?raw=true)
