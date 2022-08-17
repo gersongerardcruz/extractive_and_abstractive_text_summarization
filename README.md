@@ -9,13 +9,13 @@
 
 ## 📑 Contextualization
 
-In an increasingly information-dependent world, the ability to provide the most important and accurate information in the least amount of time is exceedingly valuable. Text summarization can provide this value. It is the process of summarizing a certain document in order to get the most important information from the original one. Essentially, text summarization produces a concise summary which preserves the valuable information and meaning of a document.
+In an increasingly information-dependent world, the ability to provide the most important and accurate information in the least amount of time is exceedingly valuable. Day-in and day-out we are faced with a plethora of information we have to interact with and absorb. One of the most common sources of information today is textual information. Thus, providing the most important and accurate information in a text becomes vital for efficiency. Text summarization can provide this value. It is the process of summarizing a certain document in order to get the most important information from the original one. Essentially, text summarization produces a concise summary which preserves the valuable information and meaning of a document.
 
 There are two general types of text summarization: Extractive and Abstractive summarization.
 
 ### Extractive Summarization
 
-Extractive summarization, from the word itself, is a method of extracting a subset of words that contain the most important information in a text. This approach takes into consideration the most important parts of document sentences and uses them to form the summarization. Then, algorithms to give weights to these parts and rank them based on similarity and importance are used.
+Extractive summarization, from the word itself, is a method of **extracting** a subset of words that contain the most important information in a text. This approach takes into consideration the most important parts of document sentences and uses them to form the summarization. Then, algorithms to give weights to these parts and rank them based on similarity and importance are used.
 
 The general workflow for extractive summarization goes like: 
 
@@ -23,7 +23,7 @@ The general workflow for extractive summarization goes like:
 
 ### Abstractive Summarization
 
-In contrast, abstractive summarization aims to **abstract** and use words that did not appear in the input document based on the semantic information of the text. This means abstractive summarization produces a new summary. Abstractive summarization interprets and examines the document using advanced NLP techniques and generates a new concise summary based the most important information in the text. 
+In contrast, abstractive summarization aims to **abstract** and use words that did not appear in the input document based on the semantic information of the text. This means abstractive summarization **produces a new summary**. Abstractive summarization interprets and examines the document using advanced NLP techniques and generates a new concise summary based the most important information in the text. 
 
 The general workflow for abstractive summarization goes like:
 
@@ -35,7 +35,7 @@ In general, abstractive summarization is desired more than extractive summarizat
 
 ## 💼 The Project
 
-In addition to the advantages and disadvantages of these two summarization techniques, there is also difficulty in summarizing long text documents. For example, in this Github issue [Bart now enforces maximum sequence length in Summarization Pipeline](https://github.com/huggingface/transformers/issues/4224), there are limits to the maximum length of a text document for abstractive summarization of some transformer models like BART. Given this, I researched on how to solve this problem and came across this paper: [Combination of abstractive and extractive approaches for summarization of long scientific texts](https://arxiv.org/abs/2006.05354) which applied extractive summarization to get a summary with the important extracted information from the text and then performed abstractive summarization on the extracted summary along with the scientific paper's abstract and conclusion. 
+In addition to the advantages and disadvantages of these two summarization techniques, there is still difficulty in summarizing long text documents. For example, in this Github issue [Bart now enforces maximum sequence length in Summarization Pipeline](https://github.com/huggingface/transformers/issues/4224), there are limits to the maximum length of a text document for abstractive summarization of some transformer models like BART. Given this, I researched on how to solve this problem and came across this paper: [Combination of abstractive and extractive approaches for summarization of long scientific texts](https://arxiv.org/abs/2006.05354) which applied extractive summarization to get a summary with the important extracted information from the text and then performed abstractive summarization on the extracted summary along with the scientific paper's abstract and conclusion. 
 
 While I won't be going as detailed as the paper, in this project, I still aim to apply extractive and abstractive summarization in order to summarize long scientific documents. 
 
@@ -49,11 +49,11 @@ The dataset I will use for this project consists of 100 scientific papers from t
 
 ## ❗ The Methodology
 
-The project workflow consists of three main steps: data collection and preprocessing, modelling, and model deployment. 
+The project workflow consists of three main steps: data collection and preprocessing, summarization, and model deployment. 
 
 ### Data Collection and Preprocessing
 
-In this step, I choose 100 scientific papers from the Scisumm corpus. I selectively decide which papers to include because the project requires papers which explicitly have an `abstract` and a `conclusion` in the .xml file. Some papers, after investigation, did not have an `abstract` section and instead was found directly in the text section of the document. This will lead to extraction errors as the .xml extraction pipeline was explicitly designed for xml documents which explicity have an `abstract` and `conclusion` section. 
+In this step, I chose 100 scientific papers from the Scisumm corpus. I selectively decided which papers to include because the project requires papers which explicitly have an `abstract` and a `conclusion` in the `.xml` file. Some papers, after investigation, did not have an `abstract` section and instead was found directly in the text section of the document. This will lead to extraction errors as the `.xml` extraction pipeline was explicitly designed for xml documents which explicity have an `abstract` and `conclusion` section. 
 
 For the data preprocessing step, I create a data cleaning and preprocessing functions with the following capabilities:
 * Lemmatization
