@@ -129,7 +129,6 @@ Shown below is the structure of the project inspired from [cookiecutter's data s
     │   ├── models         <- Scripts for text summarization
     │   ├── deployment     <- Scripts for project deployment
 
-
 ![divider](../assets/gradient-divider.png?raw=true)
 
 ## Usage
@@ -161,7 +160,7 @@ pip install virtualenv
 
 ### Create the virtual environment
 
-To create a virtual environment, a path must be declared. For this project, we can use the name `text_summarizer`:
+To create a virtual environment, a name must be declared. For this project, we can use the name `text_summarizer`:
 
 ```python
 virtualenv text_summarizer
@@ -264,3 +263,7 @@ Simply fill-out the fields with the abstract, full text, and conclusion of the t
 To deploy the app, simply follow the instructions found in the [streamlit deployment documentation](https://docs.streamlit.io/streamlit-cloud/get-started/deploy-an-app)
 
 ![divider](../assets/gradient-divider.png?raw=true)
+
+## References
+
+All references used in this project have been hyperlinked within this documentation already. Please refer to them when necessary. 
