@@ -244,7 +244,9 @@ After processing the raw data, text summarization can be performed by executing 
 py src/models/summarize.py data/processed/top5_cleaned.csv results.csv
 ```
 
-This command will perform text summarization on the cleaned csv file and outputs a summarized version in the `results.csv` file. 
+This command will perform text summarization on the cleaned csv file and outputs a summarized version in the `results.csv` file.
+
+*Note: Downloading the transformer models may take a while depending on your internet connection.*
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
