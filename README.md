@@ -9,7 +9,7 @@
 
 ## 📑 Contextualization
 
-In an increasingly information-dependent world, the ability to provide the most important and accurate information in the least amount of time is exceedingly valuable. Day-in and day-out we are faced with a plethora of information we have to interact with and absorb. One of the most common sources of information today is textual information. Thus, providing the most important and accurate information in a text becomes vital for efficiency. Text summarization can provide this value. It is the process of summarizing a certain document in order to get the most important information from the original one. Essentially, text summarization produces a concise summary which preserves the valuable information and meaning of a document.
+In an increasingly information-dependent world, the ability to provide the most important and accurate information in the least amount of time is exceedingly valuable. Day-in and day-out we are faced with a plethora of information we have to interact with and absorb. One of the most common sources of information today is textual information. Thus, providing the most important and accurate information in a text becomes vital for efficiency. Text summarization can provide this value. It is the process of summing up a certain document in order to get the most important information from the original one. Essentially, text summarization produces a concise version which preserves the valuable information and meaning of a document.
 
 There are two general types of text summarization: Extractive and Abstractive summarization.
 
@@ -37,7 +37,7 @@ In general, abstractive summarization is desired more than extractive summarizat
 
 In addition to the advantages and disadvantages of these two summarization techniques, there is still difficulty in summarizing long text documents. For example, in this Github issue [Bart now enforces maximum sequence length in Summarization Pipeline](https://github.com/huggingface/transformers/issues/4224), there are limits to the maximum length of a text document for abstractive summarization of some transformer models like BART. Given this, I researched on how to solve this problem and came across this paper: [Combination of abstractive and extractive approaches for summarization of long scientific texts](https://arxiv.org/abs/2006.05354) which applied extractive summarization to get a summary with the important extracted information from the text and then performed abstractive summarization on the extracted summary along with the scientific paper's abstract and conclusion. 
 
-While I won't be going as detailed as the paper, in this project, I still aim to apply extractive and abstractive summarization in order to summarize long scientific documents. 
+With reference to the ideas presented in the paper, for this project, I applied extractive and abstractive summarization in order to summarize long scientific documents I selectively gathered. 
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
@@ -72,7 +72,7 @@ Thus, if a paper is not properly formatted, the .xml extraction fails and leads 
 
 *Note: I recognize that a more robust algorithm will have solved this issue. However, given the limited time I had to complete this project, I decided that instead of investing more time in figuring out extraction code for all cases, selectively gathering the data I needed instead will be more effective for this project.* 
 
-For the data preprocessing step, I create a data cleaning and preprocessing functions with the following capabilities:
+For the data preprocessing step, I created a data cleaning and preprocessing functions with the following capabilities:
 * Lemmatization
 * Stopword removal
 * Lowercase
@@ -82,7 +82,7 @@ For the data preprocessing step, I create a data cleaning and preprocessing func
 * Weblinks cleaning
 * Unnecessary spaces removal
 
-I gave the user the freedom to choose which cleaning to apply by creating a unified function where every cleaning step is a boolean. **For the purpose of this project, I do not lemmatize, remove stopwords, lowercase, and remove punctuations so that the summarization will still have its semantic context in place.** 
+**By default and for the purpose of this project, I did not lemmatize, remove stopwords, lowercase, and remove punctuations so that the summarization will still have its semantic context in place.** Still, I gave the user the freedom to choose which cleaning to apply by creating a unified function where every cleaning step is a boolean.
 
 ### Text Summarization
 
