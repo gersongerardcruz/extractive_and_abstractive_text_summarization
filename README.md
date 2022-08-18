@@ -232,6 +232,8 @@ The first step in summarization is processing the data. To process the data, exe
 py src/data/make_dataset.py data/raw/top5.csv data/processed/top5_cleaned.csv
 ```
 
+*Note: Change `py` to whichever python call you are using, e.g. `python src` or `python3 src`*
+
 ### Performing Text Summarization
 
 After processing the raw data, text summarization can be performed by executing the `src/models/summarize.py` which performs text summarization on a `.csv` file of the prescribed format. The `summarize.py` also requires the arguments: input file path and output file path. 
