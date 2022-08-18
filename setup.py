@@ -7,4 +7,5 @@ setup(
     description='A combination of extractive and abstractive text summarization for summarizing long scientific texts',
     author='Gerson Cruz',
     license='MIT',
+    python_requires="<3.10"
 )

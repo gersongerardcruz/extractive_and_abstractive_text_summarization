@@ -218,6 +218,8 @@ pip install -r requirements.txt
 
 This command will install all dependencies needed for this project into your virtual environment. 
 
+*Note: Please use the 64-bit version of Python, as some packages have dropped support for the 32-bit version*
+
 ![divider](../assets/gradient-divider.png?raw=true)
 
 ### Text Summarization on `.csv` files
