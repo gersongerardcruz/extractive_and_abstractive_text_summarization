@@ -218,6 +218,8 @@ pip install -r requirements.txt
 
 This command will install all dependencies needed for this project into your virtual environment. 
 
+![divider](../assets/gradient-divider.png?raw=true)
+
 ### Text Summarization on `.csv` files
 
 The repository contains two raw data files: one of the complete 100 texts in `top100.csv` and another of the first five scientific texts in `top5.csv`. The `top5.csv` file is meant to be a test file for you to experience how the summarization works. 
