@@ -96,7 +96,7 @@ For deployment, I used Streamlit to create a simple user interface which require
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
-## 📔 Jupyter Notebooks
+## 📙 Jupyter Notebooks
 
 There are a total of 4 Jupyter notebooks included in this project. There are as follows:
 * `01-gc-data-collection.ipynb`
@@ -108,7 +108,7 @@ Each Jupyter notebook contains explorations related to the notebook's title. The
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
-## Project Organization
+## 🔎 Project Organization
 
 Shown below is the structure of the project inspired from [cookiecutter's data science project template](https://drivendata.github.io/cookiecutter-data-science/).
 
@@ -131,7 +131,7 @@ Shown below is the structure of the project inspired from [cookiecutter's data s
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
-## Usage
+## 📋 Usage
 
 There are two main use cases for this project. 
 
@@ -196,7 +196,7 @@ For a more complete explanation, check the the [virtualenv documentation](https:
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
-## Install Requirements
+## 💿 Install Requirements
 
 After activating your virtual environment, **clone the repository into it:**
 
@@ -264,6 +264,6 @@ To deploy the app, simply follow the instructions found in the [streamlit deploy
 
 ![divider](../assets/gradient-divider.png?raw=true)
 
-## References
+## 🔖 References
 
 All references used in this project have been hyperlinked within this documentation already. Please refer to them when necessary. 
