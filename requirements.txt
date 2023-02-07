@@ -3,9 +3,9 @@ click==7.1.2
 nltk>=3.6.6
 numpy>=1.22
 pandas==1.2.3
-setuptools==49.2.1
+setuptools>=65.5.1
 streamlit>=1.11.1
 summarizer==0.0.7
 transformers==4.21.1
-torch==1.12.1
+torch==1.13.1
 protobuf==3.20.*
